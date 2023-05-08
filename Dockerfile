@@ -19,8 +19,9 @@ FROM base as build
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
     apt-get install -y python pkg-config build-essential 
+        
 
-RUN apt-get update; apt install -y curl
+
 
 # Install node modules
 COPY --link package.json package-lock.json .
@@ -41,6 +42,14 @@ FROM base
 
 # Copy built application
 COPY --from=build /app /app
+
+#Install curl
+
+RUN apt-get update && apt install curl
+
+#chmod script
+
+RUN chmod +x /app/health_check.sh
 
 # Start the server by default, this can be overwritten at runtime
 CMD [ "npm", "run", "start" ]
