@@ -45,7 +45,7 @@ COPY --from=build /app /app
 
 #Install curl
 
-RUN apt-get update && apt install curl
+RUN apt-get -y update; apt-get -y install curl
 
 #chmod script
 
