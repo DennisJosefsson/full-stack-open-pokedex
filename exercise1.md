@@ -1,0 +1,7 @@
+Our group of Python programmers develops cloud-based tools for accountants. Although the frontend is mainly based on Javascript, we use Python for the technical aspects of the accounting application and the backend is based on Django for the database connections. That means we're also using Django's tool for testing that part of the application. The rest of the code uses Pytest for running the tests, and although there are alternatives (like unittest and Nose) we have found that Pytest offers the best overall solution.
+
+In order to manage and build the entire project we use Poetry, and the virtual environment we use is Pyenv. To make sure the code is clean and strict we use Pylint, although since Python is as forgiving as it is we have tried to find something similar to TypeScript but for Python, but nothing so far have been good enough.
+
+For finding the tools that suites us the best we have earlier in the project tested CI tools from Circle CI, Bitrise, AWS, Microsoft, and Google, and settled for Microsoft's Azure pipeline, which is also integrated with Github. 
+
+We considered running our own server, but since it is cloud-based running on Azure we decided that using an entire package from the same cloud provider made the most sense. As it is now our software isn't very demanding testing-wise, but that can change in the future so we're open to set up a test server inhouse. 
