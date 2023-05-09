@@ -22,3 +22,5 @@ This is just here to test the pull request feature.
 ## Another addition
 
 More tests, this belongs to exercise 11.13-14
+
+## And one more, to test #skip in commit
