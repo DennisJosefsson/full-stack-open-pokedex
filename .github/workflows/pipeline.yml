@@ -34,7 +34,6 @@ jobs:
           wait-on: http://localhost:5000
       
       - name: Deployment setup
-        if: ${{ github.event_name == 'push' && !contains(join(toJSon(github.event.commits.*.message)), 'skip')}}
         uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Deployment execution
         if: ${{ github.event_name == 'push' && !contains(join(toJSon(github.event.commits.*.message)), 'skip')}}
