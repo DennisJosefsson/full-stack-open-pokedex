@@ -13,3 +13,12 @@ Start by running `npm install` inside the project folder
 `npm run eslint` to run eslint
 `npm run build` to make a production build
 `npm run start-prod` to run your production build
+
+
+## One addition
+
+This is just here to test the pull request feature.
+
+## Another addition
+
+More tests, this belongs to exercise 11.13-14
