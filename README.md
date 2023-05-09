@@ -18,3 +18,7 @@ Start by running `npm install` inside the project folder
 ## One addition
 
 This is just here to test the pull request feature.
+
+## Another addition
+
+More tests, this belongs to exercise 11.13-14
