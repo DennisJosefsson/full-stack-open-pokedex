@@ -40,6 +40,25 @@ jobs:
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      - name: Success notification
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ success() }}
+        with:
+          text: Build succeded.
+          username: DennisJosefsson
+          description: Good to go.
+          severity: info
+          details: Test Succeeded!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }
+      - name: Fail notification
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ failure() }}
+        with:
+          text: Build failed.
+          username: DennisJosefsson
+          severity: error
+          details: Test Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     if: ${{ github.event_name == 'push' && !contains(join(toJSon(github.event.commits.*.message)), 'skip')}}
     needs: [simple_deployment_pipeline]
