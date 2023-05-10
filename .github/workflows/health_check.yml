@@ -1,9 +1,13 @@
 name: Health Check
 
 on:
-  schedule:
-    - cron: '5 * * * *'
+  # schedule:
+  #   - cron: '5 * * * *'
+  # Original schedule, disabled after triggered failure (calling wrong url) worked.
 
+  push:
+    branches:
+      - master
 jobs:
   Health-check-pokemon:
     runs-on: ubuntu-20.04
@@ -11,6 +15,6 @@ jobs:
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@v3
         with:
-          url: https://bitter-wood-9241.fly.dev/health2
+          url: https://bitter-wood-9241.fly.dev/health
           max-attempts: 3
           retry-delay: 5s
