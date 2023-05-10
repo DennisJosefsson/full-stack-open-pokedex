@@ -31,7 +31,7 @@ RUN npm install --production=false
 COPY --link . .
 
 # Build application
-RUN npm run build
+RUN npm run buil
 
 # Remove development dependencies
 RUN npm prune --production
