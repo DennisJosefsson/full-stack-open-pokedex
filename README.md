@@ -1,3 +1,7 @@
+# Link to exercise repo 11.20-21
+
+https://github.com/DennisJosefsson/FullStackOpen-anecdotes-ci-cd
+
 # Full Stack open CI/CD
 
 This repository is used for the CI/CD module of the Full stack open course
